@@ -1,11 +1,10 @@
 ---
-name: Timm Albers
+name: Home
 slug: index
 ---
 
 # About
 Software- und Webentwicklung
-http://example.com
 
 ## Skills
 - Java
