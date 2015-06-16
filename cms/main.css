@@ -2,12 +2,17 @@
   margin: 0;
   padding: 0; }
 
-a, p, span, h1, h2, h3, h4, h5, h6, li {
+a, p, span, h1, h2, h3, h4, h5, h6, li, code, pre {
   font-family: "Helvetica Neue", sans-serif;
   font-size: 11pt;
   line-height: 1.4em;
   letter-spacing: 0.03em;
   color: black; }
+
+code {
+  margin: 0 5px;
+  font-family: Monaco, monospace;
+  font-size: 10pt; }
 
 a:hover {
   color: #6EDBAF; }
