@@ -29,7 +29,7 @@ li {
 nav a {
   display: block; }
 
-aside {
+address * {
   font-style: normal; }
 
 @media screen and (min-width: 1030px) {
