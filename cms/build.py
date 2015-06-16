@@ -127,6 +127,9 @@ def write(pages, options):
 	index = pages['index']
 	del pages['index']
 
+	err = pages['404']
+	del pages['404']
+
 	navHtml = '<a href="{0}">{1}</a>'.format(baseUrl, index['name'])
 	for slug in pages:
 		page = pages[slug]
@@ -139,6 +142,7 @@ def write(pages, options):
 		template = template.replace('{{' + key + '}}', options[key])
 
 	writePage('index.html', compile(template, index['content']))
+	writePage('404.html', compile(template, err['content']))
 	for slug in pages:
 		page = pages[slug]
 
