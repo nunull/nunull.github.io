@@ -13,6 +13,7 @@ Software- und Webentwicklung
 - HTML5
 - CSS / SCSS / SASS
 - SQL
+- (Python)
 
 ---
 name: Projekte
