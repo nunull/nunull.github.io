@@ -22,19 +22,19 @@ name: Projekte
 # Projekte
 
 ## http://disko-streetwear.de
-(img http://nunull.github.io/cms/res/disko.png)
+(img disko.png)
 
 ## http://rasmus.lavendre.de
-(img http://nunull.github.io/cms/res/ramus.png)
+(img ramus.png)
 
 ## http://neander-bremen.de
-(img http://nunull.github.io/cms/res/neander-bremen.png)
+(img neander-bremen.png)
 
 ## http://abittlelit.org/
-(img http://nunull.github.io/cms/res/abittlelit.png)
+(img abittlelit.png)
 
 ## http://kanzlei-steintor.de
-(img http://nunull.github.io/cms/res/kanzlei-steintor.png)
+(img kanzlei-steintor.png)
 
 ## http://zuckerwerk.org
-(img http://nunull.github.io/cms/res/zuckerwerk.png)
+(img zuckerwerk.png)

@@ -36,7 +36,8 @@ def parse(pages):
 		return re.sub(r'{0}([^{0}]*){0}'.format(mdTag), r'<{0}>\1</{0}>'.format(htmlTag), md)
 
 	linkRegEx = re.compile(r'(?<=[ >])([a-z]+:\/\/([\w.\/\-+~?=#&%,@;]*))')
-	imgRegEx = re.compile(r'\(img ([a-z]+:\/\/([\w.\/\-+~?=#&%,@;]*))\)')
+	imgAbsRegEx = re.compile(r'\(img ([a-z]+:\/\/([\w.\/\-+~?=#&%,@;]*))\)')
+	imgRelRegEx = re.compile(r'\(img ([^\)]+)\)')
 
 	for slug in pages:
 		content = pages[slug]['content']
@@ -80,7 +81,8 @@ def parse(pages):
 			prevListLevel = listLevel
 
 			# Images
-			line = imgRegEx.sub(r'<img src="\1">', line)
+			line = imgAbsRegEx.sub(r'<img src="\1">', line)
+			line = imgRelRegEx.sub(r'<img src="{0}{1}/\1">'.format(baseUrl, 'cms/res'), line)
 
 			# Links
 			line = linkRegEx.sub(r'<a href="\1">\2</a>', line)
