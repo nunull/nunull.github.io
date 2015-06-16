@@ -20,8 +20,8 @@ name: Projekte
 
 # Projekte
 
-- http://disko-streetwear.de/
-- http://rasmus.lavendre.de/
-- http://neander-bremen.de/
-- http://kanzlei-steintor.de/
-- http://zuckerwerk.org/
+- http://disko-streetwear.de
+- http://rasmus.lavendre.de
+- http://neander-bremen.de
+- http://kanzlei-steintor.de
+- http://zuckerwerk.org
