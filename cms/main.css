@@ -41,6 +41,9 @@ article img {
   width: 100%;
   border: solid 1px black; }
 
+main {
+  padding-bottom: 50px; }
+
 @media screen and (min-width: 1030px) {
   header {
     position: fixed;
@@ -53,21 +56,28 @@ article img {
     position: absolute;
     width: 700px;
     margin-left: 50%;
-    padding-bottom: 50px;
     top: 15px;
     left: -200px; }
 
   main footer {
     display: none; } }
 @media screen and (max-width: 1029px) {
-  li {
+  li, header nav > a {
     display: inline-block;
     margin: 0 15px 0 0;
     padding: 0; }
 
   header, main {
     max-width: 700px;
-    padding: 0 15px; }
+    padding-left: 15px;
+    padding-right: 15px; }
 
   header footer, aside {
-    display: none; } }
+    display: none; }
+
+  header section, header address {
+    margin-bottom: -30px; }
+    header section h2, header section p, header address h2, header address p {
+      display: inline-block; }
+    header section h2:after, header address h2:after {
+      content: ":"; } }

@@ -30,6 +30,8 @@ address *
 article img
 	width: 100%
 	border: solid 1px black
+main
+	padding-bottom: 50px
 @media screen and (min-width: 1030px)
 	header
 		position: fixed
@@ -41,18 +43,24 @@ article img
 		position: absolute
 		width: 700px
 		margin-left: 50%
-		padding-bottom: 50px
 		top: 15px
 		left: -200px
 	main footer
 		display: none
 @media screen and (max-width: 1029px)
-	li
+	li, header nav > a
 		display: inline-block
 		margin: 0 15px 0 0
 		padding: 0
 	header, main
 		max-width: 700px
-		padding: 0 15px
+		padding-left: 15px
+		padding-right: 15px
 	header footer, aside
 		display: none
+	header section, header address
+		margin-bottom: -30px
+		h2, p
+			display: inline-block
+		h2:after
+			content: ':'
