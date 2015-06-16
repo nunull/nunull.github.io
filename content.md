@@ -23,24 +23,24 @@ name: Projekte
 
 ## http://disko-streetwear.de
 
-<img src="cms/res/disko.png">
+<img src="/cms/res/disko.png">
 
 ## http://rasmus.lavendre.de
 
-<img src="cms/res/rasmus.png">
+<img src="/cms/res/rasmus.png">
 
 ## http://neander-bremen.de
 
-<img src="cms/res/neander-bremen.png">
+<img src="/cms/res/neander-bremen.png">
 
 ## http://abittlelit.org/
 
-<img src="cms/res/abittlelit.png">
+<img src="/cms/res/abittlelit.png">
 
 ## http://kanzlei-steintor.de
 
-<img src="cms/res/kanzlei-steintor.png">
+<img src="/cms/res/kanzlei-steintor.png">
 
 ## http://zuckerwerk.org
 
-<img src="cms/res/zuckerwerk.png">
+<img src="/cms/res/zuckerwerk.png">
