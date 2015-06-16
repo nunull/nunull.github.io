@@ -29,6 +29,9 @@ li {
 nav a {
   display: block; }
 
+aside * {
+  font-style: normal; }
+
 @media screen and (min-width: 1030px) {
   header {
     position: fixed;
