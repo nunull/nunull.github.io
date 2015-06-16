@@ -40,7 +40,7 @@ name: Projekte
 (img disko.png)
 
 ## http://rasmus.lavendre.de
-(img ramus.png)
+(img rasmus.png)
 
 ## http://neander-bremen.de
 (img neander-bremen.png)
