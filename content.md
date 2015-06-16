@@ -48,3 +48,10 @@ name: Projekte
 
 ## http://zuckerwerk.org
 (img zuckerwerk.png)
+
+---
+name: 404
+---
+
+# 404
+Die Seite konnte nicht gefunden werden.
