@@ -46,7 +46,10 @@ address * {
     margin-left: 50%;
     padding-bottom: 50px;
     top: 15px;
-    left: -200px; } }
+    left: -200px; }
+
+  main footer {
+    display: none; } }
 @media screen and (max-width: 1029px) {
   li {
     display: inline-block;
