@@ -3,7 +3,7 @@ import re, shutil, os.path
 def read():
 	pages = {}
 
-	f = open('content.md', 'r')
+	f = open('../content.md', 'r')
 	md = f.read()
 	f.close()
 
@@ -98,7 +98,7 @@ def write(pages):
 		return template.replace('{{content}}', content)
 
 	def writePage(path, html):
-		f = open(path, 'w')
+		f = open('../{0}'.format(path), 'w')
 		f.write(html)
 		f.close()
 
@@ -121,8 +121,9 @@ def write(pages):
 	for slug in pages:
 		page = pages[slug]
 
-		if not os.path.exists(page['slug']):
-			os.makedirs(page['slug'])
+		path = '../{0}'.format(page['slug'])
+		if not os.path.exists(path):
+			os.makedirs(path)
 		writePage('{0}/index.html'.format(page['slug']), compile(template, page['content']))
 
 write(parse(read()))
