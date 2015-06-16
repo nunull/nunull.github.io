@@ -1,4 +1,4 @@
-import re, shutil, os.path, sys
+import re, shutil, os.path, sys, operator
 
 def read():
 	pages = {}
@@ -21,6 +21,7 @@ def read():
 
 	for i, part in enumerate(parts[::2]):
 		page = {}
+		page['id'] = i
 
 		metaStr = part.split('\n')
 		page['content'] = parts[i*2+1]
@@ -110,8 +111,21 @@ def parse(pages):
 	return pages
 
 def write(pages, options):
-	def compile(template, content):
-		return template.replace('{{content}}', content)
+	def compile(template, page):
+		pages['index']['slug'] = ''
+
+		# Create a sorted representation of the pages dict
+		sortedPages = sorted(pages.items(), key=operator.itemgetter(1))
+
+		navHtml = ''
+		for cur in sortedPages:
+			classes = ''
+			if page['slug'] == cur[1]['slug']:
+				classes = 'class="active"'
+
+			navHtml += '\n<a href="{0}{1}"{2}>{3}</a>'.format(baseUrl, cur[1]['slug'], classes, cur[1]['name'])
+
+		return template.replace('{{content}}', page['content']).replace('{{nav}}', navHtml)
 
 	def writePage(path, html):
 		f = open('../{0}'.format(path), 'w')
@@ -124,25 +138,17 @@ def write(pages, options):
 	template = f.read()
 	f.close()
 
+	for key in options:
+		template = template.replace('{{' + key + '}}', options[key])
+
 	index = pages['index']
-	del pages['index']
+	# del pages['index']
 
 	err = pages['404']
 	del pages['404']
 
-	navHtml = '<a href="{0}">{1}</a>'.format(baseUrl, index['name'])
-	for slug in pages:
-		page = pages[slug]
-
-		navHtml += '\n<a href="{0}{1}">{2}</a>'.format(baseUrl, page['slug'], page['name'])
-
-	template = template.replace('{{nav}}', navHtml)
-
-	for key in options:
-		template = template.replace('{{' + key + '}}', options[key])
-
-	writePage('index.html', compile(template, index['content']))
-	writePage('404.html', compile(template, err['content']))
+	writePage('index.html', compile(template, index))
+	writePage('404.html', compile(template, err))
 	for slug in pages:
 		page = pages[slug]
 
@@ -150,8 +156,8 @@ def write(pages, options):
 		if not os.path.exists(path):
 			os.makedirs(path)
 
-		content = page['content'].replace('{{baseUrl}}', baseUrl)
-		writePage('{0}/index.html'.format(page['slug']), compile(template, content))
+		page['content'] = page['content'].replace('{{baseUrl}}', baseUrl)
+		writePage('{0}/index.html'.format(page['slug']), compile(template, page))
 
 baseUrl = sys.argv[1]
 
