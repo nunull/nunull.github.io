@@ -32,6 +32,10 @@ nav a {
 address * {
   font-style: normal; }
 
+article img {
+  width: 100%;
+  border: solid 1px black; }
+
 @media screen and (min-width: 1030px) {
   header {
     position: fixed;
