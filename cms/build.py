@@ -8,7 +8,16 @@ def read():
 	f.close()
 
 	parts = md.split('---\n')
-	parts.pop(0)
+
+	options = parts.pop(0).split('\n')
+	parsedOptions = {}
+	for option in options:
+		optionParts = option.split(':')
+		if(len(optionParts) == 2):
+			key = optionParts[0].strip()
+			value = optionParts[1].strip()
+			parsedOptions[key] = value
+
 	for i, part in enumerate(parts[::2]):
 		page = {}
 
@@ -25,7 +34,7 @@ def read():
 
 		pages[page['slug']] = page
 
-	return pages
+	return (pages, parsedOptions)
 
 def parse(pages):
 	def countLeadingChars(char, str):
@@ -99,7 +108,7 @@ def parse(pages):
 
 	return pages
 
-def write(pages, baseUrl):
+def write(pages, options):
 	def compile(template, content):
 		return template.replace('{{content}}', content)
 
@@ -107,6 +116,8 @@ def write(pages, baseUrl):
 		f = open('../{0}'.format(path), 'w')
 		f.write(html)
 		f.close()
+
+	baseUrl = options['baseUrl']
 
 	f = open('template.html', 'r')
 	template = f.read()
@@ -122,7 +133,9 @@ def write(pages, baseUrl):
 		navHtml += '\n<a href="{0}{1}">{2}</a>'.format(baseUrl, page['slug'], page['name'])
 
 	template = template.replace('{{nav}}', navHtml)
-	template = template.replace('{{baseUrl}}', baseUrl)
+
+	for key in options:
+		template = template.replace('{{' + key + '}}', options[key])
 
 	writePage('index.html', compile(template, index['content']))
 	for slug in pages:
@@ -137,4 +150,8 @@ def write(pages, baseUrl):
 
 baseUrl = sys.argv[1]
 
-write(parse(read()), baseUrl)
+data = read()
+pages = parse(data[0])
+options = data[1]
+options['baseUrl'] = baseUrl
+write(pages, options)

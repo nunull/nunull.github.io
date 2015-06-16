@@ -1,3 +1,5 @@
+copyright: &copy; 2015 Timm Albers
+
 ---
 name: Home
 slug: index
