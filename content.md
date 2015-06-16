@@ -1,3 +1,5 @@
+status: Verfügbar für Projekte
+mail: timmm.albers@gmail.com
 copyright: &copy; 2015 Timm Albers
 
 ---
@@ -6,7 +8,13 @@ slug: index
 ---
 
 # About
-Software- und Webentwicklung
+
+## Software- und Webentwicklung
+Ich heiße Timm, bin Schüler und lebe in Bremen. Ich begeistere mich für die Entwicklung von Webanwendungen, bewege mich aber auch in anderen Bereichen der Informatik. Aktuelle technische Neuerungen interessieren mich sehr.
+
+In meiner Freizeit fahre ich außerdem Fahrrad oder mache Musik.
+
+Haben Sie Interesse mit mir Zusammenzuarbeiten? Schreiben Sie mir.
 
 ## Skills
 - Java

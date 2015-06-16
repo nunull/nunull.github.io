@@ -12,7 +12,8 @@ def read():
 	options = parts.pop(0).split('\n')
 	parsedOptions = {}
 	for option in options:
-		optionParts = option.split(':')
+		optionParts = option.split(':', 1)
+
 		if(len(optionParts) == 2):
 			key = optionParts[0].strip()
 			value = optionParts[1].strip()
@@ -154,4 +155,5 @@ data = read()
 pages = parse(data[0])
 options = data[1]
 options['baseUrl'] = baseUrl
+options['css'] = '{0}cms/main.css'.format(baseUrl)
 write(pages, options)
