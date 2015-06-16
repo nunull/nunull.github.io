@@ -1,4 +1,4 @@
-import re, shutil, os.path
+import re, shutil, os.path, sys
 
 def read():
 	pages = {}
@@ -35,7 +35,8 @@ def parse(pages):
 		mdTag = re.escape(mdTag)
 		return re.sub(r'{0}([^{0}]*){0}'.format(mdTag), r'<{0}>\1</{0}>'.format(htmlTag), md)
 
-	linkRegEx = re.compile(r'([a-z]+:\/\/([\w.\/\-+~?=#&%,@;]*))')
+	linkRegEx = re.compile(r'(?<=[ >])([a-z]+:\/\/([\w.\/\-+~?=#&%,@;]*))')
+	imgRegEx = re.compile(r'\(img ([a-z]+:\/\/([\w.\/\-+~?=#&%,@;]*))\)')
 
 	for slug in pages:
 		content = pages[slug]['content']
@@ -78,6 +79,9 @@ def parse(pages):
 				html += '</ul>' * (-listLevelDiff)
 			prevListLevel = listLevel
 
+			# Images
+			line = imgRegEx.sub(r'<img src="\1">', line)
+
 			# Links
 			line = linkRegEx.sub(r'<a href="\1">\2</a>', line)
 
@@ -93,7 +97,7 @@ def parse(pages):
 
 	return pages
 
-def write(pages):
+def write(pages, baseUrl):
 	def compile(template, content):
 		return template.replace('{{content}}', content)
 
@@ -109,13 +113,14 @@ def write(pages):
 	index = pages['index']
 	del pages['index']
 
-	navHtml = '<a href="/">{0}</a>'.format(index['name'])
+	navHtml = '<a href="{0}">{1}</a>'.format(baseUrl, index['name'])
 	for slug in pages:
 		page = pages[slug]
 
-		navHtml += '\n<a href="/{0}">{1}</a>'.format(page['slug'], page['name'])
+		navHtml += '\n<a href="{0}{1}">{2}</a>'.format(baseUrl, page['slug'], page['name'])
 
 	template = template.replace('{{nav}}', navHtml)
+	template = template.replace('{{baseUrl}}', baseUrl)
 
 	writePage('index.html', compile(template, index['content']))
 	for slug in pages:
@@ -124,6 +129,10 @@ def write(pages):
 		path = '../{0}'.format(page['slug'])
 		if not os.path.exists(path):
 			os.makedirs(path)
-		writePage('{0}/index.html'.format(page['slug']), compile(template, page['content']))
 
-write(parse(read()))
+		content = page['content'].replace('{{baseUrl}}', baseUrl)
+		writePage('{0}/index.html'.format(page['slug']), compile(template, content))
+
+baseUrl = sys.argv[1]
+
+write(parse(read()), baseUrl)
