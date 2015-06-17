@@ -7,6 +7,7 @@ push:
 	git add -A
 	git commit -m "Updated content (automatic commit)"
 	git push origin master
+
 all: compile
 deploy: BASEPATH=/
 deploy: compile push
