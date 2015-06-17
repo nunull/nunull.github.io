@@ -7,7 +7,7 @@ name: Home
 slug: index
 ---
 
-# About
+# Timm Albers
 
 ## Software- und Webentwicklung
 Ich heiße Timm, bin Schüler und lebe in Bremen. Ich begeistere mich für die Entwicklung von Webanwendungen, bewege mich aber auch in anderen Bereichen der Informatik. Aktuelle technische Neuerungen interessieren mich sehr.

@@ -113,7 +113,7 @@ def write(pages, options):
 		pages['index']['slug'] = ''
 
 		# Create a sorted representation of the pages dict
-		sortedPages = sorted(pages.items(), key=operator.itemgetter(1))
+		sortedPages = sorted(pages.items(), cmp = lambda x, y: x[1]['id'] - y[1]['id'])
 
 		navHtml = ''
 		for cur in sortedPages:
@@ -140,7 +140,6 @@ def write(pages, options):
 		template = template.replace('{{' + key + '}}', options[key])
 
 	index = pages['index']
-	# del pages['index']
 
 	err = pages['404']
 	del pages['404']
