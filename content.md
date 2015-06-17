@@ -49,7 +49,7 @@ name: Projekte
 ## http://neander-bremen.de
 (img neander-bremen.png)
 
-## http://abittlelit.org/
+## http://abittlelit.org
 (img abittlelit.png)
 
 ## http://kanzlei-steintor.de
