@@ -68,6 +68,9 @@ header h1 {
   text-align: center;
   color: white; }
 
+header footer {
+  opacity: 0.3; }
+
 nav a {
   display: block; }
 
