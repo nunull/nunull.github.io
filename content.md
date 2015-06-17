@@ -43,7 +43,7 @@ name: Projekte
 ## http://disko-streetwear.de
 (img disko.png)
 
-## http://rasmus.lavendre.de
+## rasmus.lavendre.de
 (img rasmus.png)
 
 ## http://neander-bremen.de
