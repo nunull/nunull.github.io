@@ -30,6 +30,10 @@ Diese Website wird über GitHub Pages betrieben. Die HTML-Seiten werden mittels 
 
 Zum aktualisieren der Seite muss `content.md` angepasst werden. Um die Seite dann lokal anzusehen muss `make` ausgeführt werden. Zum updaten der Online-Version wird dann `make deploy` verwendet.
 
+### Makefile
+https://github.com/nunull/nunull.github.io/blob/master/Makefile
+<script src="http://gist-it.appspot.com/github/nunull/nunull.github.io/blob/master/Makefile?footer=0"></script>
+
 ---
 name: Projekte
 ---

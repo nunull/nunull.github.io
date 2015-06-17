@@ -1,3 +1,6 @@
+# Use make for local testing and make deploy to deploy to GitHub Pages
+
+# Local basepath
 BASEPATH=/web/nunull.github.io/
 
 compile:

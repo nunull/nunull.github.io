@@ -57,8 +57,6 @@ def parse(pages):
 		prevListLevel = 0
 		html = ''
 		for line in lines:
-			# todo: htmlentities
-
 			headerLevel = countLeadingChars('#', line)
 			listLevel = 0
 
