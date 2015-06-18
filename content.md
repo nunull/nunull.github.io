@@ -27,12 +27,12 @@ Haben Sie Interesse mit mir Zusammenzuarbeiten? Schreiben Sie mir.
 - git
 
 ## Über diese Website
-Diese Website wird über GitHub Pages betrieben. Die HTML-Seiten werden mittels eines Python-Scripts generiert. Der Quellcode kann unter https://github.com/nunull/nunull.github.io/blob/master/cms/build.py gefunden werden. Der Inhalt der Seite ist unter https://raw.githubusercontent.com/nunull/nunull.github.io/master/content.md hinterlegt. Als Format wird angepasstes Markdown verwendet.
+Diese Website wird über GitHub Pages betrieben. Die HTML-Seiten werden mittels eines Python-Scripts generiert. Der Quellcode kann unter https://github.com/nunull/nunull.github.io/blob/master/cms/build.py?ts=4 gefunden werden. Der Inhalt der Seite ist unter https://raw.githubusercontent.com/nunull/nunull.github.io/master/content.md hinterlegt. Als Format wird angepasstes Markdown verwendet.
 
 Zum Aktualisieren der Seite muss die Datei `content.md` angepasst werden. Um die Seite dann lokal anzusehen muss `make` ausgeführt werden. Zum updaten der Online-Version wird dann `make deploy` verwendet.
 
 ### Makefile
-https://github.com/nunull/nunull.github.io/blob/master/Makefile
+https://github.com/nunull/nunull.github.io/blob/master/Makefile?ts=4
 <script src="http://gist-it.appspot.com/github/nunull/nunull.github.io/blob/master/Makefile?footer=0"></script>
 
 ---
