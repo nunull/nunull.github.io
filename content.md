@@ -62,6 +62,9 @@ name: Projekte
 ## http://zuckerwerk.org
 (img zuckerwerk.png)
 
+## http://koi-koi.de
+(img koi.png)
+
 ---
 name: 404
 ---
