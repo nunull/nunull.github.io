@@ -1,7 +1,7 @@
 # Use make for local testing and make deploy to deploy to GitHub Pages
 
 # Local basepath
-BASEPATH=/web/nunull.github.io/
+BASEPATH=/
 
 compile:
 	sass --sourcemap=none --no-cache cms/main.sass cms/main.css

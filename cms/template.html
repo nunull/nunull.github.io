@@ -9,37 +9,22 @@
 	<body>
 		<header>
 			<h1>TA</h1>
-			<hr>
 			<nav>
 				{{nav}}
-				<aside>
-					<br>
-					<a href="https://github.com/nunull">GitHub</a>
-					<a href="https://gist.github.com/nunull">GitHub Gist</a>
-				</aside>
+				<a href="https://github.com/nunull">GitHub</a>
+				<a href="https://gist.github.com/nunull">GitHub Gist</a>
 			</nav>
-			<section>
-				<h2>Status</h2>
-				<p>{{status}}</p>
-			</section>
-			<address>
-				<h2>Kontakt</h2>
-				<p><a class="button" href="mailto:{{mail}}">{{mail}}</a></p>
-			</address>
-			<hr>
-			<footer>
-				<br>
-				<span>{{copyright}}</span>
-			</footer>
 		</header>
 		<main>
 			<article>
 				{{content}}
 			</article>
-			<footer>
-				<br>
-				<span>{{copyright}}</span>
-			</footer>
 		</main>
+		<footer>
+			<address>
+				<p><a class="button" href="mailto:{{mail}}">{{mail}}</a></p>
+			</address>
+			<span>{{copyright}}</span>
+		</footer>
 	</body>
 </html>
