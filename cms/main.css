@@ -54,6 +54,7 @@ hr {
 
 center {
   padding: 50px;
+  border-top: solid 2px #64E390;
   border-radius: 2px;
   background: #EEE; }
 
